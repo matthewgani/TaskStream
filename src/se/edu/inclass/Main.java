@@ -46,4 +46,18 @@ public class Main {
             }
         }
     }
+
+    public static void printDeadlinesUsingStreams(ArrayList<Task> tasksData) {
+        System.out.println("Printing deadlines using streams");
+        tasksData.stream()
+                .filter((t) -> t instanceof Deadline)
+                .forEach(System.out::println);
+        // filters out object t which is deadline
+
+        //tasksData.parallelStream()
+        // can do in background for large data
+    }
+
+
+
 }
